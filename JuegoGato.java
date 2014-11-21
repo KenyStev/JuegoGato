@@ -5,7 +5,7 @@
 			char[][] table= new char[3][3];
 			boolean win = false, turno=true;
 			int resp, x, y, TRES = 3;
-			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0;
+			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0,xnx=0,xn0=0;
 
 			do{
 				System.out.println("1. Jugar X-O");
@@ -90,7 +90,50 @@
 									}
 								}
 							}
-							fx=0; f0=0; cx=0; c0=0;
+
+							for(int f=0; f<TRES; f++){
+								for (int c=0; c<TRES; c++) {
+									if(f==c){
+										if(table[f][c]=='X'){
+											xpx++;
+											if(xpx==TRES){
+												System.out.println("Win X por xpx");
+												win = true;
+											}
+										}
+										if(table[f][c]=='0'){
+											xp0++;
+											if(xp0==TRES){
+												System.out.println("Win 0 por xp0");
+												win = true;
+											}
+										}
+									}
+
+
+									if(f+c==TRES-1){
+										if(table[f][c]=='X'){
+											xnx++;
+											if(xnx==TRES){
+												System.out.println("Win X por xnx");
+												win = true;
+											}
+										}
+										if(table[f][c]=='0'){
+											xn0++;
+											if(xn0==TRES){
+												System.out.println("Win 0 por xn0");
+												win = true;
+											}
+										}
+									}
+								}
+								if(win){
+									break;
+								}
+							}
+
+							fx=0; f0=0; cx=0; c0=0; xpx=0; xp0=0; xnx=0; xn0=0;
 						}while(!win);
 						win = false;
 					break;
