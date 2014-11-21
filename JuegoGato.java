@@ -18,11 +18,9 @@
 
 						for(int f=0; f<table.length; f++){
 							for (int c=0; c<table[f].length; c++) {	
-<<<<<<< HEAD
+
 								tale[f][c] = '_';
-=======
-								table[f][c] = "__";
->>>>>>> 2502446aa8005b79aa81b23fa478ff8eb342f897
+
 							}
 						}
 						do{
