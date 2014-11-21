@@ -2,11 +2,7 @@ import java.util.Scanner;
 public class JuegoGato{
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-<<<<<<< HEAD
 		char[][] table= new Char[3][3];
-=======
-		char[][] table= new char[3][3];
->>>>>>> 01b98ae75399ce61b0f373a2434c4476663a6afe
 		boolean win = false, turno=true;
 		int resp, x,y;
 
@@ -16,19 +12,7 @@ public class JuegoGato{
 
 			System.out.print("Ingrese Opcion: ");
 			resp = scan.nextInt();
-			switch(resp){
-<<<<<<< HEAD
-				case 1:
-
-
-
-
-				do{
-					System.out.println("Ingrese columna:");
-					y= lea.nextInt();
-
-				}while(y<0|| y > table.length);
-=======
+			switch(resp){				
 				case 1: 
 					do{
 						System.out.print("Ingrese fila: ");
@@ -37,7 +21,15 @@ public class JuegoGato{
 							System.out.println("Fila Incorrecta!");
 						}
 					}while(x<0 || x>table.length);
->>>>>>> 01b98ae75399ce61b0f373a2434c4476663a6afe
+
+					do{
+						System.out.println("Ingrese columna:");
+						y= scan.nextInt();
+						if(y<0 || y>table.length){
+							System.out.println("Fila Incorrecta");
+						}
+					}while(y<0 || y> table.length);
+
 				break;
 			}
 		}while(rest!=2);
