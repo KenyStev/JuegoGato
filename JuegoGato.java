@@ -4,7 +4,8 @@
 			Scanner scan = new Scanner(System.in);
 			char[][] table= new Char[3][3];
 			boolean win = false, turno=true;
-			int resp, x,y;
+			int resp, x, y, TRES = 3;
+			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0;
 
 			do{
 				System.out.println("1. Jugar X-O");
@@ -17,7 +18,7 @@
 
 						for(int f=0; f<table.length; f++){
 							for (int c=0; c<table[f].length; c++) {	
-								tale[f][c] = "__";
+								tale[f][c] = '_';
 							}
 						}
 						do{
@@ -43,6 +44,40 @@
 									System.out.println("Fila Incorrecta");
 								}
 							}while(y<0 || y> table.length);
+
+							for (int i=0; f<TRES; f++) {
+								if(table[x][i]=='X'){
+									fx++;
+									if(fx==TRES){
+										System.out.println("Win X por fila: ["+x+"]: ");
+										win=true;
+										break;
+									}
+								}else if(table[x][i]=='0'){
+									f0++;
+									if(f0==TRES){
+										System.out.println("Win 0 por fila: ["+x+"]: ");
+										win=true;
+										break;
+									}
+								}
+
+								if(table[i][y]=='X'){
+									cx++;
+									if(cx==TRES){
+										System.out.println("Win X por columna: ["+y+"]");
+										win=true;
+										break;
+									}
+								}else if(table[i][y]=='0'){
+									c0++;
+									if(c0==TRES){
+										System.out.println("Win 0 por columna: ["+y+"]");
+										win=true;
+										break;
+									}
+								}
+							}
 						}while(win);
 					break;
 				}
