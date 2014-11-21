@@ -15,6 +15,12 @@ public class JuegoGato{
 			switch(resp){
 				case 1: 
 					do{
+						for(int f=0; f<table.length; f++){
+							for (int c=0; c<table[f].length; c++) {
+								
+							}
+						}
+
 						System.out.print("Ingrese fila: ");
 						x = scan.nextInt();
 						if(x<0 || x>table.length){
