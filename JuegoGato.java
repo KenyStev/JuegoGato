@@ -89,9 +89,10 @@
 										break;
 									}
 								}
-								fx=0; f0=0; cx=0; c0=0;
 							}
+							fx=0; f0=0; cx=0; c0=0;
 						}while(!win);
+						win = false;
 					break;
 				}
 			}while(resp!=2);
