@@ -5,7 +5,7 @@
 			char[][] table= new char[3][3];
 			boolean win = false, turno=true;
 			int resp, x, y, TRES = 3;
-			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0,xnx=0,xn0=0;
+			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0,xnx=0,xn0=0,cont=0;
 
 			do{
 				System.out.println("1. Jugar X-O");
@@ -18,7 +18,8 @@
 
 						for(int f=0; f<table.length; f++){
 							for (int c=0; c<table[f].length; c++) {	
-								table[f][c] = '_';
+						table[f][c] = '_';	
+
 							}
 						}
 						do{
@@ -134,6 +135,20 @@
 							}
 
 							fx=0; f0=0; cx=0; c0=0; xpx=0; xp0=0; xnx=0; xn0=0;
+
+							for(char[] tiles : table){
+								for(char tile : tiles){
+									if(tile != '_'){
+										cont++;
+									}
+								}
+							}
+							if(cont == 9){
+								System.out.println("EMPATE");
+								break;
+							}else{
+								cont=0;
+							}
 						}while(!win);
 						win = false;
 					break;
