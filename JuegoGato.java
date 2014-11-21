@@ -2,7 +2,7 @@
 	public class JuegoGato{
 		public static void main(String[] args) {
 			Scanner scan = new Scanner(System.in);
-			char[][] table= new Char[3][3];
+			char[][] table= new char[3][3];
 			boolean win = false, turno=true;
 			int resp, x, y, TRES = 3;
 			int fx=0,f0=0,cx=0,c0=0,xpx=0,xp0=0;
@@ -18,7 +18,11 @@
 
 						for(int f=0; f<table.length; f++){
 							for (int c=0; c<table[f].length; c++) {	
+<<<<<<< HEAD
 								tale[f][c] = '_';
+=======
+								table[f][c] = "__";
+>>>>>>> 2502446aa8005b79aa81b23fa478ff8eb342f897
 							}
 						}
 						do{
@@ -30,20 +34,33 @@
 							}
 
 							do{
-								System.out.print("Ingrese fila: ");
-								x = scan.nextInt();
-								if(x<0 || x>table.length){
-									System.out.println("Fila Incorrecta!");
-								}
-							}while(x<0 || x>table.length);
+								do{
+									System.out.print("Ingrese fila: ");
+									x = scan.nextInt();
+									if(x<0 || x>table.length){
+										System.out.println("Fila Incorrecta!");
+									}
+								}while(x<0 || x>table.length);
 
-							do{
-								System.out.println("Ingrese columna:");
-								y= scan.nextInt();
-								if(y<0 || y>table.length){
-									System.out.println("Fila Incorrecta");
+								do{
+									System.out.println("Ingrese columna:");
+									y= scan.nextInt();
+									if(y<0 || y>table.length){
+										System.out.println("Fila Incorrecta");
+									}
+								}while(y<0 || y> table.length);
+
+								if(table[x][y] == '_' ){
+									System.out.println("Celda vacia");
+									if(turno){
+										tabla[x][y]= 'X';
+										
+									}else{
+										tabla[x][y]= '0';
+									}
+										turno = !turno;	
 								}
-							}while(y<0 || y> table.length);
+							}while(table[x][y]!='_');
 
 							for (int i=0; f<TRES; f++) {
 								if(table[x][i]=='X'){
@@ -77,10 +94,9 @@
 										break;
 									}
 								}
-							}
 						}while(win);
 					break;
 				}
-			}while(rest!=2);
+			}while(resp!=2);
 		}
 	}
