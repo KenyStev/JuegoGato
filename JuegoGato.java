@@ -2,7 +2,7 @@
 	public class JuegoGato{
 		public static void main(String[] args) {
 			Scanner scan = new Scanner(System.in);
-			char[][] table= new Char[3][3];
+			char[][] table= new char[3][3];
 			boolean win = false, turno=true;
 			int resp, x,y;
 
@@ -17,7 +17,7 @@
 
 						for(int f=0; f<table.length; f++){
 							for (int c=0; c<table[f].length; c++) {	
-								tale[f][c] = "__";
+								table[f][c] = "__";
 							}
 						}
 						do{
@@ -43,9 +43,20 @@
 									System.out.println("Fila Incorrecta");
 								}
 							}while(y<0 || y> table.length);
+
+							if(table[x][y] == '_' ){
+								System.out.println("Celda vacia");
+								if(turno){
+									tabla[x][y]= 'X';
+									
+								}else{
+									tabla[x][y]= '0';
+								}
+									turno = !turno;				
+							}
 						}while(win);
 					break;
 				}
-			}while(rest!=2);
+			}while(resp!=2);
 		}
 	}
